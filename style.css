@@ -1,0 +1,276 @@
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --accent: #ff465c;
+    --background: #08080b;
+    --panel: #111115;
+    --text: #f5f5f7;
+    --muted: #888891;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+button, textarea, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    min-height: 100vh;
+}
+
+.topbar {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 22px;
+    border-bottom: 1px solid #25252b;
+    background: #0c0c10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon, .welcome-logo {
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(145deg, #ff465c, #700d24);
+    box-shadow: 0 0 25px #ff465c35;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    font-size: 25px;
+}
+
+.brand h1 {
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.brand span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.menu-button {
+    background: transparent;
+    color: white;
+    border: 0;
+    font-size: 24px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 76px;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    padding: 18px;
+    background: #0d0d12;
+    border-right: 1px solid #25252b;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sidebar > button {
+    padding: 13px;
+    border: 1px solid #66202d;
+    border-radius: 12px;
+    background: #211116;
+    color: white;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+.workspace {
+    min-height: calc(100vh - 76px);
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.welcome {
+    margin: auto;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.welcome-logo {
+    width: 85px;
+    height: 85px;
+    border-radius: 25px;
+    font-size: 52px;
+    margin: 0 auto 22px;
+}
+
+.welcome h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.messages {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.message {
+    padding: 16px;
+    margin: 12px 0;
+    border-radius: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.message.user {
+    background: #241319;
+    border: 1px solid #51202c;
+    margin-left: 12%;
+}
+
+.message.assistant {
+    background: #141419;
+    border: 1px solid #292930;
+    margin-right: 12%;
+}
+
+.composer {
+    width: 100%;
+    max-width: 850px;
+    margin: 25px auto 0;
+    padding: 12px;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    border: 1px solid #54202c;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #241016, #0b0b0e);
+    box-shadow: 0 0 25px #a10f2b18;
+}
+
+.composer select {
+    color: white;
+    background: #191217;
+    border: 1px solid #46202a;
+    border-radius: 10px;
+    padding: 9px;
+    outline: none;
+    max-width: 105px;
+}
+
+.composer textarea {
+    flex: 1;
+    min-width: 0;
+    resize: none;
+    max-height: 150px;
+    color: white;
+    background: transparent;
+    border: 0;
+    outline: none;
+    padding: 10px 4px;
+    line-height: 1.5;
+}
+
+.composer textarea::placeholder {
+    color: #888891;
+}
+
+.composer button {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    background: linear-gradient(145deg, #ff465c, #a10f2b);
+}
+
+.disclaimer {
+    margin: 12px auto 0;
+    color: #777780;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .brand span {
+        max-width: 210px;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .sidebar {
+        width: 260px;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .workspace {
+        margin-left: 0;
+        padding: 20px 12px;
+    }
+
+    .welcome h2 {
+        font-size: 23px;
+    }
+
+    .message.user {
+        margin-left: 5%;
+    }
+
+    .message.assistant {
+        margin-right: 5%;
+    }
+
+    .composer {
+        gap: 7px;
+        padding: 9px;
+    }
+
+    .composer select {
+        max-width: 91px;
+        font-size: 12px;
+    }
+}
