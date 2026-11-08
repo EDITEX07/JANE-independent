@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08080b">
+    <title>J.A.N.E. | AI Workspace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">J</div>
+                <div>
+                    <h1>J.A.N.E.</h1>
+                    <span>Judicial Analytical and Neuroresearch Engine</span>
+                </div>
+            </div>
+            <button id="menuButton" class="menu-button">☰</button>
+        </header>
+
+        <aside id="sidebar" class="sidebar">
+            <button id="newChatButton">+ New Chat</button>
+            <div id="chatHistory"></div>
+            <div class="sidebar-footer">J.A.N.E. Version 1.02</div>
+        </aside>
+
+        <main class="workspace">
+            <section id="welcomeScreen" class="welcome">
+                <div class="welcome-logo">J</div>
+                <h2>Welcome to J.A.N.E.</h2>
+                <p>Your Judicial Analytical and Neuroresearch Engine.</p>
+            </section>
+
+            <section id="chatMessages" class="messages"></section>
+
+            <div class="composer">
+                <select id="modeSelector" aria-label="Intelligence mode">
+                    <option>Adaptive</option>
+                    <option>General</option>
+                    <option>Thinker</option>
+                </select>
+
+                <textarea id="messageInput"
+                    placeholder="Message J.A.N.E...."
+                    rows="1"></textarea>
+
+                <button id="sendButton" aria-label="Send message">↑</button>
+            </div>
+
+            <p class="disclaimer">
+                J.A.N.E. can make mistakes. Verify important information.
+            </p>
+        </main>
+
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
