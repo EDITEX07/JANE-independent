@@ -17,7 +17,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 // J.A.N.E. backend address will be added after deployment.
-const API_URL = "YOUR_BACKEND_URL/chat";
+const API_URL = "https://jane-backend-m8e5.onrender.com/chat";
 
 const welcome = document.getElementById("welcomeScreen");
 const messages = document.getElementById("chatMessages");
